@@ -1,6 +1,6 @@
 import React from 'react';
-import patients from '../patients.json';
 
+import patients from '../patients.json';
 import PatientRow from './PatientRow';
 
 const PatientTable = (props) => {
