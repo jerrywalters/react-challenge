@@ -10,15 +10,15 @@ import {
 } from 'react-router-dom';
 
 import PatientTable from './components/PatientTable';
-import PatientSingle from './components/PatientSingle';
+import PatientDetail from './components/PatientDetail';
 
 class App extends Component {
   render() {
     return (
       <div className="App"> 
-        <Switch>
+        <Switch>          
+          <Route path={`/patients/:patientId`} component={PatientDetail}/>
           <Route path='/patients' component={PatientTable}/>
-          <Route path={`/:patientId`} component={PatientSingle}/>
         </Switch>
       </div>
     );

@@ -1,25 +1,33 @@
 import React from 'react';
-
-import patients from '../patients.json';
-import PatientRow from './PatientRow';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
-const PatientTable = (props) => {
+import PatientRow from './PatientRow';
+import patients from '../patients.json';
+import './PatientTable.css';
+
+const PatientTable = ({match}) => {
     const patientList = patients.map((patient) => 
-        <Link to={`${props.match.url}/${patient.name.last}`}>
-            <PatientRow 
+            <PatientRow
                 firstName = {patient.name.first}
                 lastName = {patient.name.last}
                 mrn = {patient.mrn}
                 dob = {patient.dob}
                 sex = {patient.sex}
-                treatmentSite = {patient.treatment_site} />
-        </Link>
+                treatmentSite = {patient.treatment_site} 
+                match={match}
+                />
     );
 
     return (
         <table>
             <tbody>
+                <tr>
+                    <th>Name</th>
+                    <th>MRN</th>
+                    <th>DOB</th>
+                    <th>Demographic</th>
+                    <th>Treatment Site</th>
+                </tr>
                 {patientList}
             </tbody>
         </table>
