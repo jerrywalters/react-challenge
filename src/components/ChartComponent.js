@@ -9,10 +9,20 @@ class ChartComponent extends Component {
         super(props);
     }
 
+    componentDidMount() {
+        // use the config prop to get the options object for the chart
+        this.initializeChart(this.props.config);
+    }
+
+    initializeChart(options) {
+        let el = ReactDOM.findDOMNode(this.refs.weightChart);
+        let ctx = el.getContext("2d"); 
+        ctx.height = 80; 
+        let chart = new Chart(ctx, options);
+    }
+
     render() {
-        return (
-            <div></div>
-        )
+        return <canvas ref="weightChart" />
     }
 }
 

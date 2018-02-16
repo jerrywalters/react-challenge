@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import moment from 'moment';
 import Chart from 'chart.js';
 import patients from '../patients.json';
+import ChartComponent from './ChartComponent';
 
 class PatientSingle extends Component {
     constructor(props) {
@@ -10,24 +11,6 @@ class PatientSingle extends Component {
 
         // This binding is necessary to make `this` work in the callback
         this.handleClick = this.handleClick.bind(this);
-    }
-
-    componentDidMount() {
-        console.log('config', this.props.config);
-        this.initializeChart(this.props.config);
-    }
-
-    initializeChart(options) {
-        let el = ReactDOM.findDOMNode(this.refs.weightChart);
-        let ctx = el.getContext("2d");  
-        // let chart = new Chart(ctx, options);
-        //         //initialize chart
-        // const weightChart = new Chart();
-        // new Chart(ctx,{
-        //     type: 'bubble',
-        //     data: data,
-        //     options: options
-        // });
     }
 
     // Access browser history in props to go back to previous route
@@ -74,7 +57,7 @@ class PatientSingle extends Component {
                     <h2>{`${age} year old ${sex}`}</h2>
                     <h2>{`${tumorSizeCm} cm ${histology}, ${treatmentSite}`}</h2>
                     <h2>{`${weight}lbs`}</h2>
-                    <canvas ref="weightChart" />
+                    <ChartComponent config={chartConfig}/>
                 </div>
             </div>
         )
