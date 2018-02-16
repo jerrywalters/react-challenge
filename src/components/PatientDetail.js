@@ -25,29 +25,12 @@ const PatientSingle = (props) => {
     // use .reduce() to find the lowest and highest weights in the array of patients
     const lowestWeight = patients.reduce((prev, current) => prev.weight < current.weight ? prev:current).weight;
     const highestWeight = patients.reduce((prev, current) => prev.weight > current.weight ? prev:current).weight;
-    const medianWeight = median(patients);
+    const medianWeight = getMedianWeight(patients);
 
     // another way to find the lowest or highest, decided against because it iterates thru array twice
     // const lowestWeight = patients
     //     .map(patient => patient.weight)
     //     .sort((a, b)=> a-b)[0];
-
-    function median(values) {
-        // get all patients weights and put in numberical order
-        const allWeights = values
-            .map(values => values.weight)
-            .sort((a, b)=> a-b);
-        
-        // get index of middle number in array
-        const half = Math.floor(allWeights.length/2);
-    
-        // if the array has an even number of indexes, then take the mean of the middle 2
-        // if the array has an odd number of indexes, then take the middle number
-        if(allWeights.length % 2)
-            return (allWeights[half-1] + allWeights[half]) / 2.0;
-        else
-            return allWeights[half];
-    }
 
     // if the patient's mrn matches the current route param, return true
     function isSelectedPatient(patient) {
@@ -73,6 +56,25 @@ const PatientSingle = (props) => {
             </div>
         </div>
     )
+}
+
+// Make this function public for purpose of testing (i'd love to chat about best practice here)
+// Could easily make this more resusable by only performing allWeights if values isnt a set of numbers, etc.
+export function getMedianWeight(values) {
+    // get all patients weights and put in numberical order
+    const allWeights = values
+        .map(values => values.weight)
+        .sort((a, b)=> a-b);
+    
+    // get index of middle number in array
+    const length = allWeights.length;
+
+    // if the array has an even number of indexes, then take the mean of the middle 2
+    // if the array has an odd number of indexes, then take the middle number
+    if(allWeights.length % 2 === 0)
+        return (allWeights[length/2 - 1] + allWeights[length/2]) / 2;
+    else
+        return allWeights[(length-1)/2];
 }
 
 export default PatientSingle;
