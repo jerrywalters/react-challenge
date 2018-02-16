@@ -22,18 +22,22 @@ const PatientTable = (props) => {
     );
 
     return (
-        <table>
-            <tbody>
-                <tr>
-                    <th>Name</th>
-                    <th>MRN</th>
-                    <th>DOB</th>
-                    <th>Demographic</th>
-                    <th>Treatment Site</th>
-                </tr>
-                {patientList}
-            </tbody>
-        </table>
+        <section className="section">
+            <table className="table is-striped is-hoverable is-fullwidth">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>MRN</th>
+                        <th>DOB</th>
+                        <th>Demographic</th>
+                        <th>Treatment Site</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {patientList}
+                </tbody>
+            </table>
+        </section>
     )
 }
 

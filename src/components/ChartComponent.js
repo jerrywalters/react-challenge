@@ -15,7 +15,7 @@ const ChartComponent = (props) => {
         const Plot = createPlotlyComponent(Plotly);
         // let el = ReactDOM.findDOMNode(this.refs.chart);
         // let context = el.getContext("2d");
-        const yValue = ['Patient Weight'];
+        const yValue = ['Weight'];
 
         // pass the weight values in through props
         const medianWeight = [props.medianWeight];
@@ -30,9 +30,9 @@ const ChartComponent = (props) => {
             mode: 'markers',
             name: 'Patient Weight',
             marker: {
-                color: 'rgba(204, 204, 204, 0.95)',
+                color: 'rgb(96, 209, 169)',
                 line: {
-                color: 'rgba(217, 217, 217, 1.0)',
+                color: 'rgb(60, 178, 156)',
                 width: 1,
                 },
                 symbol: 'circle',
@@ -48,9 +48,9 @@ const ChartComponent = (props) => {
             mode: 'markers',
             name: 'Median Weight',
             marker: {
-                color: 'rgba(156, 165, 196, 0.95)',
+                color: 'rgb(137, 150, 196)',
                 line: {
-                color: 'rgba(156, 165, 196, 1.0)',
+                color: 'rgb(137, 150, 196)',
                 width: 1,
                 },
                 symbol: 'circle',
@@ -75,9 +75,9 @@ const ChartComponent = (props) => {
                 }
                 },
                 tickfont: {
-                font: {
-                    color: 'rgb(102, 102, 102)'
-                }
+                    font: {
+                        color: 'rgb(102, 102, 102)'
+                    }
                 },
                 autotick: false,
                 dtick: 10,
@@ -85,8 +85,8 @@ const ChartComponent = (props) => {
                 tickcolor: 'rgb(102, 102, 102)'
             },
             margin: {
-                l: 140,
-                r: 40,
+                l: 60,
+                r: 20,
                 b: 50,
                 t: 20
             },
@@ -99,8 +99,8 @@ const ChartComponent = (props) => {
             },
             width: 600,
             height: 180,
-            paper_bgcolor: 'rgb(254, 247, 234)',
-            plot_bgcolor: 'rgb(254, 247, 234)',
+            paper_bgcolor: 'rgb(237, 242, 249)',
+            plot_bgcolor: 'rgb(237, 242, 249)',
             hovermode: 'none'
         };
 

@@ -4,7 +4,8 @@ import patients from '../patients.json';
 import ChartComponent from './ChartComponent';
 
 // import css
-import 'bulma/css/bulma.css'
+import './PatientDetail.css';
+import 'bulma/css/bulma.css';
 
 class PatientSingle extends Component {
     constructor(props) {
@@ -50,24 +51,29 @@ class PatientSingle extends Component {
         }
     
         return (
-            <div>
-                <button onClick={this.handleClick}>Back</button>
-                <div className="patient-single__info">
-                    <div className="box">
-                    <h1>{fullName}</h1>
-                    <h2>{`MRN: ${mrn}`}</h2>
-                    <h2>{`${age} y.o. ${sex}`}</h2>
-                    <h2>{`${tumorSizeCm} cm ${histology}, ${treatmentSite}`}</h2>
-                    <h2>{`${weight}lbs`}</h2>
+            <section class="section">
+
+                <div className="content">
+                    <button class="button is-link is-outlined" onClick={this.handleClick}>Back</button>
+                </div>
+                <div className="box">
+                    <div className="content">
+                        <h2 className="title">{fullName}</h2>
+                        <ul>
+                            <li>{`MRN: ${mrn}`}</li>
+                            <li>{`${age} y.o. ${sex}`}</li>
+                            <li>{`${tumorSizeCm} cm ${histology}, ${treatmentSite}`}</li>
+                            <li>{`${weight}lbs`}</li>
+                        </ul>
                     </div>
                     <ChartComponent 
-                        ptWeight={weight}
-                        medianWeight={medianWeight}
-                        hiWeight={highestWeight}
-                        loWeight={lowestWeight}
-                        />
+                            ptWeight={weight}
+                            medianWeight={medianWeight}
+                            hiWeight={highestWeight}
+                            loWeight={lowestWeight}
+                            />
                 </div>
-            </div>
+            </section>
         )
     }
 }

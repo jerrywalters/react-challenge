@@ -13,8 +13,8 @@ import 'bulma/css/bulma.css'
 
 const PatientData = (props) => {
     return (
-        <td>
-            <Link className='react-router--link' to={`patients/${props.route}`}>
+        <td className="td__link">
+            <Link className='patient-details__link' to={`patients/${props.route}`}>
                 {props.tableData}
             </Link>
         </td>
@@ -24,7 +24,7 @@ const PatientData = (props) => {
 // Pass the PatientData component into the row with props for the route to use in <Link>
 
 const PatientRow = (props) => {
-    return (
+    return (    
         <tr>
                 <PatientData route={props.mrn} tableData={`${props.firstName}, ${props.lastName}`} />
                 <PatientData route={props.mrn} tableData={props.mrn}/>
