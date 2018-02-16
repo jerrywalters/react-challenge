@@ -1,8 +1,11 @@
 import React from 'react';
+import patients from '../patients.json';
 
 import PatientRow from './PatientRow';
-import patients from '../patients.json';
+
+// import css
 import './PatientTable.css';
+import 'bulma/css/bulma.css'
 
 const PatientTable = (props) => {
     // Map through the array of patient objects in patients.json and give the component props containing the patients data

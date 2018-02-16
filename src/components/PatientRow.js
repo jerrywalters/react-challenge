@@ -1,6 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+
+// import css
 import './PatientRow.css';
+import 'bulma/css/bulma.css'
 
 // Here i've created a separate PatientData component to use within the rows
 // I did this because using <Link> around the <tr> would create an <a> tag nest inside the <tr>

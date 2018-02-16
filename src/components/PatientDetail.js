@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import moment from 'moment';
-import Chart from 'chart.js';
 import patients from '../patients.json';
 import ChartComponent from './ChartComponent';
+
+// import css
+import 'bulma/css/bulma.css'
 
 class PatientSingle extends Component {
     constructor(props) {
@@ -47,26 +48,24 @@ class PatientSingle extends Component {
         function isSelectedPatient(patient) {
             return patient.mrn === patientId;
         }
-
-        const marks = {
-            weight: {
-                style: {
-                color: 'red',
-                },
-                label: <strong>Weight</strong>,
-            },
-        };
-
+    
         return (
             <div>
                 <button onClick={this.handleClick}>Back</button>
                 <div className="patient-single__info">
+                    <div className="box">
                     <h1>{fullName}</h1>
-                    <h2>{mrn}</h2>
-                    <h2>{`${age} year old ${sex}`}</h2>
+                    <h2>{`MRN: ${mrn}`}</h2>
+                    <h2>{`${age} y.o. ${sex}`}</h2>
                     <h2>{`${tumorSizeCm} cm ${histology}, ${treatmentSite}`}</h2>
                     <h2>{`${weight}lbs`}</h2>
-                    <ChartComponent marks={marks} min={lowestWeight} max={highestWeight}/>
+                    </div>
+                    <ChartComponent 
+                        ptWeight={weight}
+                        medianWeight={medianWeight}
+                        hiWeight={highestWeight}
+                        loWeight={lowestWeight}
+                        />
                 </div>
             </div>
         )
