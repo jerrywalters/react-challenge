@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import moment from 'moment';
-import patients from '../patients.json';
-import ChartComponent from './ChartComponent';
+import patients from '../../patients.json';
+import ChartComponent from './ChartComponent/ChartComponent';
 
 // import css
 import './PatientDetail.css';

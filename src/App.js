@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Route, Switch, BrowserRouter, Redirect } from 'react-router-dom';
 
-import PatientTable from './components/PatientTable';
-import PatientDetail from './components/PatientDetail';
+import PatientTable from './components/PatientTable/PatientTable';
+import PatientDetail from './components/PatientDetail/PatientDetail';
 
 import './App.css';
 

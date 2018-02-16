@@ -1,7 +1,7 @@
 import React from 'react';
-import patients from '../patients.json';
+import patients from '../../patients.json';
 
-import PatientRow from './PatientRow';
+import PatientRow from './PatientRow/PatientRow';
 
 // import css
 import './PatientTable.css';
