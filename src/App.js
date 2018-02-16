@@ -16,8 +16,10 @@ class App extends Component {
   render() {
     return (
       <div className="App"> 
-        <Route path='/patients' component={PatientTable}/>
-        <Route path='/patients/:patientId' component={PatientSingle}/>
+        <Switch>
+          <Route path='/patients' component={PatientTable}/>
+          <Route path={`/:patientId`} component={PatientSingle}/>
+        </Switch>
       </div>
     );
   }

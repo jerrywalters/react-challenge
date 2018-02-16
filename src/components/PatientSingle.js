@@ -1,6 +1,11 @@
 import React from 'react';
 
 const PatientSingle = (props) => {
+    // function handleClick(e) {
+    //     e.preventDefault();
+    //     history.push('/patients');
+    // }
+
     return (
         <div>
             <button>Back</button>
