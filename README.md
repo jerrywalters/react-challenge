@@ -1,5 +1,15 @@
 Hi, I'll be updating this readme with information on steps i'd take next to improve this app. In the meantime, feel free to clone the repo and follow the guide below to get it up and running locally!
 
+## Quick Install
+In the project directory run:
+
+```
+npm install
+npm start
+```
+
+that's all! Check out the docs below for more details.
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
   
 ## Available Scripts
