@@ -1,5 +1,6 @@
 import React from 'react';
 import patients from '../patients.json';
+import moment from 'moment';
 
 const PatientSingle = (props) => {
     //set current route param as patientId
@@ -17,22 +18,9 @@ const PatientSingle = (props) => {
         treatmentSite,
     } = patientData;
     const fullName = `${name.last}, ${name.first}`;
-    const age = getAge(dob);
 
-    // calculate patient age using dob and current date
-    function getAge(dob) {
-        const today = new Date();
-        const birthDate = new Date(dob);
-        const month = today.getMonth() - birthDate.getMonth();
-        let age = today.getFullYear() - birthDate.getFullYear();
-
-        // fixes innacuracies based on the month the patient was born
-        if (month < 0 || (month === 0 && today.getDate() < birthDate.getDate())) {
-            age--;
-        }
-
-        return age;
-    }
+    // use moment.js to get age from dob
+    const age = moment().diff(dob, 'years');
 
     // if the patient's mrn matches the current route param, return true
     function isSelectedPatient(patient) {
