@@ -1,12 +1,11 @@
 import React from 'react';
 
-const PatientSingle = () => {
+const PatientSingle = (props) => {
     return (
         <div>
             <button>Back</button>
             <div className="patient-single__info">
-                <h2>Patient Name</h2>
-
+                <h2>{props.match.params.patientId}</h2>
             </div>
         </div>
     )
