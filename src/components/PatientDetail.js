@@ -47,7 +47,16 @@ class PatientSingle extends Component {
         function isSelectedPatient(patient) {
             return patient.mrn === patientId;
         }
-    
+
+        const marks = {
+            weight: {
+                style: {
+                color: 'red',
+                },
+                label: <strong>Weight</strong>,
+            },
+        };
+
         return (
             <div>
                 <button onClick={this.handleClick}>Back</button>
@@ -57,7 +66,7 @@ class PatientSingle extends Component {
                     <h2>{`${age} year old ${sex}`}</h2>
                     <h2>{`${tumorSizeCm} cm ${histology}, ${treatmentSite}`}</h2>
                     <h2>{`${weight}lbs`}</h2>
-                    <ChartComponent config={chartConfig}/>
+                    <ChartComponent marks={marks} min={lowestWeight} max={highestWeight}/>
                 </div>
             </div>
         )
