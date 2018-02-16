@@ -1,13 +1,7 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
-import {
-  BrowserRouter as Router,
-  Route,
-  Link,
-  Switch
-} from 'react-router-dom';
+import { Route, Switch} from 'react-router-dom';
 
 import PatientTable from './components/PatientTable';
 import PatientDetail from './components/PatientDetail';

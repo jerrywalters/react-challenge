@@ -1,5 +1,4 @@
 import React from 'react';
-import patients from '../patients.json';
 import { Link } from 'react-router-dom';
 import './PatientRow.css';
 
@@ -7,7 +6,7 @@ import './PatientRow.css';
 // I did this because using <Link> around the <tr> would create an <a> tag nest inside the <tr>
 // this is invalid html, and complicated to style, etc.
 // Inversely, I could use an onClick() function on the <tr> to just push the route to the MRN
-// I didn't choose this solution because it's inaccessible, and if you wanted to copy the link, etc. it would cause issues. 
+// I didn't choose this solution because it's inaccessible, and if you wanted to copy the link, etc. it would cause issues.
 
 const PatientData = (props) => {
     return (
@@ -18,6 +17,8 @@ const PatientData = (props) => {
         </td>
     )
 }
+
+// Pass the PatientData component into the row with props for the route to use in <Link>
 
 const PatientRow = (props) => {
     return (
